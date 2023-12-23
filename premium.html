@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiseBunny | Premium</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column; /* Mobilde alt alta olmasını sağlar */
+            align-items: center;
+            height: 100vh;
+            margin: 0 auto;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #007BFF;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .menu-icon:hover + .menu {
+            display: block;
+        }
+        .plan-kutusu {
+            border: 2px solid #007BFF;
+            padding: 40px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease;
+            margin: 20px 0; /* Aralık verme */
+            max-width: 300px; /* Maksimum genişlik */
+        }
+        .plan-kutusu:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3);
+        }
+        .plan-kutusu h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .ozellikler {
+            margin-bottom: 20px;
+        }
+        .ozellikler ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .ozellikler ul li {
+            margin-bottom: 10px;
+        }
+        .premium-buton {
+            padding: 15px 40px;
+            font-size: 18px;
+            background-color: transparent;
+            color: white;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .premium-buton::before {
+            content: "";
+            position: absolute;
+            top: -25px;
+            left: -75px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 20%, transparent 70%);
+            animation: sparkle 1.5s infinite;
+        }
+        @keyframes sparkle {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(150px, -50px);
+                opacity: 1;
+            }
+        }
+        .premium-buton:hover {
+            background-color: #fff;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div class="menu" id="menu">
+        <a href="#">👑Premium</a>
+        <a href="./hakkımda.html">Hakkımda</a>
+        <a href="https://discord.gg/4XeWqvYMYJ">İletişim</a>
+    </div>
+    <div class="container">
+        <div class="plan-kutusu">
+            <h2>Premium Plan</h2>
+            <div class="ozellikler">
+                <ul>
+                    <li>Temel Özellikler + Premium Komutlar</li>
+                    <li>YapayZeka Kayıt Sistemi</li>
+                    <li>YapayZeka ile Konuşma</li>
+                  <li>Hızlı Destek</li>
+                </ul>
+            </div>
+            <button class="premium-buton"><a href="https://discord.gg/4XeWqvYMYJ">Premium Planı Satın Al</a></button>
+        </div>
+
+        <div class="plan-kutusu">
+            <h2>Normal Plan</h2>
+            <div class="ozellikler">
+                <ul>
+                    <li>Temel özellikler</li>
+                    <li>Hızlı Destek</li>
+                </ul>
+            </div>
+            <button class="premium-buton"><a href="https://discord.com/api/oauth2/authorize?client_id=1152613347708125194&permissions=8&scope=bot">Normal Planı Kullan</a></button>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
