@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Hatası</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        
+        #error-container {
+            text-align: center;
+            color: white;
+        }
+        
+        #error-text {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        
+        #error-text span {
+            color: #00ff00;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="error-container">
+        <img src="https://media.discordapp.net/attachments/1116091606609711104/1170411793030582302/NG20231104-0817042.png?ex=6558f1ec&is=65467cec&hm=f2815a2d1fe6b45e7f140b63c7f5ecd0707ad2d70bf837ede760560898d40988&" alt="404 Hatası">
+        <div id="error-text">Sayfa <span>Bulunamadı</span></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta name="googlebot" content="noindex">
+<meta name="googlebot-news" content="nosnippet">
+  <meta name="robots" content="noindex">
+  <!-- HTML Meta Tags -->
+  <title>Discord Bot | RiseBunny </title>
+  <meta name="description" content="Discord sunucunuzu moderasyon,koruma,yapayzeka-kayıt,abonerol,ticketsistemi ve dahası ile yorulmadan yönetin.">
+    <meta property="og:url"
+  content="https://risebunny.tic.tc/">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://risebunny.tic.tc/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Discord Bot | RiseBunny ">
+  <meta property="og:description" content="Discord sunucunuzu moderasyon,koruma,yapayzeka-kayıt,abonerol,ticketsistemi ve dahası ile yorulmadan yönetin.">
+  <meta property="og:image" content="https://media.discordapp.net/attachments/1109875312671592499/1147188055715889243/NG20230901-061329.png">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="risebunny.tic.tc">
+  <meta property="twitter:url" content="https://risebunny.tic.tc/">
+ <meta name="twitter:title" content="Discord Bot | RiseBunny ">
+  <meta name="twitter:description" content="Discord sunucunuzu moderasyon,koruma,yapayzeka-kayıt,abonerol,ticketsistemi ve dahası ile yorulmadan yönetin.">
+  <meta name="twitter:image" content="https://media.discordapp.net/attachments/1109875312671592499/1147188055715889243/NG20230901-061329.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiseBunny</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media.discordapp.net/attachments/1118567518454423593/1159135266787823847/modern-dark-blue-abstract-geometric-background-with-dark-modern-triangle-texture-elegant-website-style-vector-design_116849-1059.jpg?ex=651ec857&is=651d76d7&hm=dc4353c009470fbd949b7f60f1466826e422679062a44662978101a951005a50&'); /* Arka plan resmi */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: blue; /* Menü simgesinin rengi */
+            z-index: 1;
+        }
+        .menu {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 20px;
+            display: none;
+            flex-direction: column;
+            align-items: flex-end;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .menu-item {
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        .menu-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .profile {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile .shine {
+            position: absolute;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 40%, transparent 70%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation: shine-animation 2s linear infinite;
+        }
+        @keyframes shine-animation {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        .name {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .about-me {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            max-width: 300px;
+        }
+        .bot-section {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            max-width: 300px;
+        }
+        .bot-section h2 {
+            color: white;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .bot-section p {
+            color: white;
+            font-size: 16px;
+        }
+        .premium {
+            color: #FFD700; /* Altın rengi */
+        }
+        .menu::after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(0, 0, 255, 0.8); /* Mavi renkli menü göstergesi */
+            animation: menu-glow 1.5s linear infinite alternate;
+            top: -5px;
+            right: -5px;
+        }
+        @keyframes menu-glow {
+            0% {
+                box-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(0, 0, 255, 0.8);
+            }
+        }
+  
+        /* Afişin CSS kodu burada */
+        .banner {
+            background-color: #333;
+            color: white;
+            text-align: right;
+            padding: 20px;
+            position: relative;
+        }
+
+        .banner-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .banner-text {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: yellow; /* Metin rengi */
+        }
+
+        
+
+
+      
+
+    </style>
+</head>
+<body>
+<!-- Çerez kutusu elementi -->
+<div class="cookie-box">
+  <p>Sizlere daha iyi bir deneyim sunmak için çerezleri kullanıyoruz site veya botumuzu kullanarak <a href="./gizlilik.html">Kullanıcı Sözleşmesi ve Gizlilik Politikasını</a> kabul etmiş olursunuz!</p>
+  <button class="accept-button" onclick="acceptCookie()">Onayla</button>
+</div>
+
+<!-- Sağ taraftaki resim elementi -->
+<a href="./kod.html" target="_blank">
+  <img
+    class="side-image"
+    src="https://media.discordapp.net/attachments/1145451691861364766/1168121105647685642/1696148608233.png?ex=65509c8e&is=653e278e&hm=c9663a8a240a0f44d8195f0aa3ebd4ad0ee87ae8cd508c98867ed17e78fb2c3a&"
+    alt="Bing"
+    width="100"
+    height="100"
+  />
+</a>
+
+<style>
+  /* Çerez kutusunun stilini belirliyoruz */
+  .cookie-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    display: none; /* Başlangıçta gizli */
+  }
+
+  /* Kabul et butonunun stilini belirliyoruz */
+  .accept-button {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  /* Sağ taraftaki resmin stilini belirliyoruz */
+  .side-image {
+    position: fixed;
+    right: 10px;
+    top: 80%;
+    transform: translateY(-50%);
+    display: none; /* Başlangıçta gizli */
+  }
+
+      
+    .album {
+      position: relative;
+      overflow: hidden;
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .slideshow {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slideshow img {
+      width: 300px;
+      height: auto;
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    #prevBtn, #nextBtn {
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #prevBtn {
+      margin-right: 10px;
+    }
+
+    #prevBtn:hover, #nextBtn:hover {
+      background-color: #555;
+    }
+
+  
+</style>
+
+  
+<script>
+  // Çerez kutusu ve resim elementlerini seçiyoruz
+  var cookieBox = document.querySelector(".cookie-box");
+  var sideImage = document.querySelector(".side-image");
+
+  // Çerez adını ve değerini belirliyoruz
+  var cookieName = "accepted";
+  var cookieValue = "yes";
+
+  // Çerezin süresini belirliyoruz (gün cinsinden)
+  var cookieDays = 30;
+
+  // Çerez oluşturma fonksiyonu
+  function createCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+      var date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+  }
+
+  // Çerez okuma fonksiyonu
+  function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  // Çerez silme fonksiyonu
+  function eraseCookie(name) {
+    createCookie(name, "", -1);
+  }
+
+  // Kabul et butonuna tıklandığında çerez oluşturup kutuyu gizleme fonksiyonu
+  function acceptCookie() {
+    createCookie(cookieName, cookieValue, cookieDays);
+    cookieBox.style.display = "none";
+    sideImage.style.display = "block";
+  }
+
+  // Sayfa yüklendiğinde çerezi kontrol etme fonksiyonu
+  function checkCookie() {
+    var accepted = readCookie(cookieName);
+    if (accepted == cookieValue) {
+      // Çerez zaten varsa kutuyu gizle
+      cookieBox.style.display = "none";
+      sideImage.style.display = "block";
+    } else {
+      // Çerez yoksa kutuyu göster
+      cookieBox.style.display = "block";
+      sideImage.style.display = "none";
+    }
+  }
+
+  // Sayfa yüklendiğinde çerezi kontrol et
+  window.onload = checkCookie;
+      </script>
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
+        <a href="./premium.html" class="menu-item premium"><span style="font-size: 24px; vertical-align: middle;">👑</span> Premium</a>
+        <a href="./hakkımda.html" class="menu-item">Hakkımda</a>
+        <a href="https://discord.gg/4XeWqvYMYJ" class="menu-item">İletişim</a>
+        <a href="./gizlilik.html" class="menu-item">Kullanıcı Sözleşmesi</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+    
+    
+        <div class="shine"></div>
+    </div>
+    <div class="name">
+        RiseBunny
+    </div>
+    <div class="about-me">
+        Geleceği Bugünden Yaşa!
+    </div>
+    <div class="bot-section">
+        <h2>RiseBunny</h2>
+        <p>Merhaba! Benim adım RiseBunny ve Discord sunucunuz için özel olarak geliştirilmiş bir Discord botuyum. Sizin sunucunuzu daha etkili, eğlenceli ve düzenli hale getirmek için tasarlandım.</p>
+    
+    <p>Benimle sohbet edebilir, yapayzeka kayıt sistemimi kullanarak sunucunuzda düzeni sağlayabilir, abonelerinize özel avantajlar sunabilir ve ekonomi sistemi ile sunucunuzda eğlenceli ekonomi oluşturabilirsiniz.</p>
+
+
+    <h2>Bağlantılar:</h2>
+    <ul>
+        <li><a href="https://discord.com/api/oauth2/authorize?client_id=1152613347708125194&permissions=8&scope=bot">RiseBunny'yi Sunucunuza Davet Edin</a></li>
+        <li><a href="https://discord.gg/4XeWqvYMYJ">Destek Sunucusuna Katıl</a></li>
+    </ul>
+    <p>RiseBunny'i sunucunuza davet edin ve deneyimleyin. Eğer herhangi bir sorunuz veya geri bildiriminiz varsa, destek sunucusuna katılarak<a href="https://discord.gg/4XeWqvYMYJ">RiseBunny Sunucusu</a> üzerinden bize ulaşabilirsiniz.</p>
+    <i><em class="süre">Son Güncelleme Tarihi: 4 Ekim 2023</em></i>
+     
+  
+</body>
+  </html>
+  
