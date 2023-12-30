@@ -29,25 +29,35 @@
             color: #ecf0f1;
         }
 
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #34495e;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        .navbar {
+            background-color: #3498db;
+            overflow: hidden;
         }
 
-        p {
-            margin-bottom: 10px;
-        }
-
-        em {
+        .navbar a {
+            float: left;
             display: block;
+            color: #ecf0f1;
             text-align: center;
-            color: #bdc3c7;
-            font-size: 14px;
-            margin-top: 20px;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navbar a {
+                display: none;
+            }
+
+            .navbar a.icon {
+                float: right;
+                display: block;
+            }
         }
 
         .menu-icon {
@@ -78,15 +88,6 @@
         .menu a:hover {
             color: #3498db;
         }
-
-        @media only screen and (max-width: 600px) {
-            .menu-icon {
-                display: block;
-            }
-            .menu {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
@@ -94,12 +95,11 @@
         <h1>RiseBunny Discord Bot</h1>
     </header>
 
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-    <div class="menu" id="menu">
+    <div class="navbar">
         <a href="./index.html">Anasayfa</a>
         <a href="./premium.html">👑 Premium</a>
         <a href="./hakkımda.html">Hakkımda</a>
+        <a class="icon" onclick="toggleMenu()">☰</a>
     </div>
 
     <section>
@@ -126,7 +126,7 @@
 
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('menu');
+            const menu = document.querySelector('.menu');
             menu.style.display = (menu.style.display === 'block' || menu.style.display === '') ? 'none' : 'block';
         }
     </script>
