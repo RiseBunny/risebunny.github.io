@@ -4,85 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RiseBunny | Premium</title>
+    <meta name="description" content="RiseBunny Discord Bot'un Premium özellikleri ile sunucunuza renk katın!">
+    <meta property="og:title" content="RiseBunny | Premium">
+    <meta property="og:description" content="RiseBunny Discord Bot'un Premium özellikleri ile sunucunuza renk katın!">
+    <meta property="og:image" content="https://example.com/path/to/your/image.jpg"> 
+    <meta property="og:url" content="https://risebunny.github.io/premium">
+    <meta property="og:type" content="website">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF;
+            padding: 20px;
+            text-align: center;
+            color: white;
         }
         .container {
             display: flex;
-            flex-direction: column; /* Mobilde alt alta olmasını sağlar */
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
-            margin: 0 auto;
+            margin: 20px;
         }
-        .menu-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #007BFF;
-        }
-        .menu {
-            display: none;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background-color: #007BFF;
-            color: white;
-            border-radius: 10px;
-            padding: 10px;
-        }
-        .menu a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .menu a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        .menu-icon:hover + .menu {
-            display: block;
-        }
-        .plan-kutusu {
+        .plan {
             border: 2px solid #007BFF;
             padding: 40px;
             background-color: #007BFF;
             color: white;
             border-radius: 15px;
-            position: relative;
             overflow: hidden;
             text-align: center;
             box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
             transition: all 0.3s ease;
-            margin: 20px 0; /* Aralık verme */
-            max-width: 300px; /* Maksimum genişlik */
+            margin: 20px 0;
+            max-width: 300px;
         }
-        .plan-kutusu:hover {
+        .plan:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(0, 123, 255, 0.3);
         }
-        .plan-kutusu h2 {
+        .plan h2 {
             font-size: 24px;
             margin-bottom: 10px;
         }
-        .ozellikler {
+        .features {
             margin-bottom: 20px;
         }
-        .ozellikler ul {
+        .features ul {
             list-style-type: none;
             padding: 0;
         }
-        .ozellikler ul li {
+        .features ul li {
             margin-bottom: 10px;
         }
-        .premium-buton {
+        .premium-button {
             padding: 15px 40px;
             font-size: 18px;
             background-color: transparent;
@@ -94,7 +73,7 @@
             overflow: hidden;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .premium-buton::before {
+        .premium-button::before {
             content: "";
             position: absolute;
             top: -25px;
@@ -114,49 +93,39 @@
                 opacity: 1;
             }
         }
-        .premium-buton:hover {
+        .premium-button:hover {
             background-color: #fff;
             color: #007BFF;
         }
     </style>
 </head>
 <body>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-    <div class="menu" id="menu">
-        <a href="#">👑Premium</a>
-        <a href="./hakkımda.html">Hakkımda</a>
-        <a href="https://discord.gg/4XeWqvYMYJ">İletişim</a>
-    </div>
+    <header>
+        <h1>RiseBunny Discord Bot - Premium</h1>
+    </header>
     <div class="container">
-        <div class="plan-kutusu">
+        <div class="plan">
             <h2>Premium Plan</h2>
-            <div class="ozellikler">
+            <div class="features">
                 <ul>
                     <li>Temel Özellikler + Premium Komutlar</li>
-                    <li>YapayZeka Kayıt Sistemi</li>
-                    <li>YapayZeka ile Konuşma</li>
-                  <li>Hızlı Destek</li>
-                </ul>
-            </div>
-            <button class="premium-buton"><a href="https://discord.gg/4XeWqvYMYJ">Premium Planı Satın Al</a></button>
-        </div>
-
-        <div class="plan-kutusu">
-            <h2>Normal Plan</h2>
-            <div class="ozellikler">
-                <ul>
-                    <li>Temel özellikler</li>
+                    <li>Yapay Zeka Kayıt Sistemi</li>
+                    <li>Yapay Zeka ile Konuşma</li>
                     <li>Hızlı Destek</li>
                 </ul>
             </div>
-            <button class="premium-buton"><a href="https://discord.com/api/oauth2/authorize?client_id=1152613347708125194&permissions=8&scope=bot">Normal Planı Kullan</a></button>
+            <button class="premium-button"><a href="https://discord.gg/4XeWqvYMYJ">Premium Planı Satın Al</a></button>
+        </div>
+        <div class="plan">
+            <h2>Normal Plan</h2>
+            <div class="features">
+                <ul>
+                    <li>Temel Özellikler</li>
+                    <li>Hızlı Destek</li>
+                </ul>
+            </div>
+            <button class="premium-button"><a href="https://discord.com/api/oauth2/authorize?client_id=1152613347708125194&permissions=8&scope=bot">Normal Planı Kullan</a></button>
         </div>
     </div>
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
-        }
-    </script>
 </body>
 </html>
