@@ -49,23 +49,14 @@
             color: #333;
         }
 
-        @media only screen and (max-width: 600px) {
-            .navbar a {
-                display: none;
-            }
-
-            .navbar a.icon {
-                float: right;
-                display: block;
-            }
-        }
-
         .menu-icon {
             display: none;
             cursor: pointer;
             float: right;
             color: #ecf0f1;
             font-size: 24px;
+            padding: 16px;
+            background-color: #3498db;
         }
 
         .menu {
@@ -88,6 +79,41 @@
         .menu a:hover {
             color: #3498db;
         }
+
+        @media only screen and (max-width: 600px) {
+            .navbar a:not(:first-child) {
+                display: none;
+            }
+
+            .navbar a.icon {
+                float: right;
+                display: block;
+            }
+
+            .navbar.responsive a.icon {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+
+            .navbar.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .menu {
+                display: block;
+                position: absolute;
+                background-color: #3498db;
+                width: 100%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -95,10 +121,10 @@
         <h1>RiseBunny Discord Bot</h1>
     </header>
 
-    <div class="navbar">
-        <a href="./">Anasayfa</a>
-        <a href="./premium">👑 Premium</a>
-        <a href="./hakkımda">Hakkımda</a>
+    <div class="navbar" id="myNavbar">
+        <a href="./index.html">Anasayfa</a>
+        <a href="./premium.html">👑 Premium</a>
+        <a href="./hakkımda.html">Hakkımda</a>
         <a class="icon" onclick="toggleMenu()">☰</a>
     </div>
 
@@ -126,8 +152,8 @@
 
     <script>
         function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.style.display = (menu.style.display === 'block' || menu.style.display === '') ? 'none' : 'block';
+            const menu = document.getElementById('myNavbar');
+            menu.classList.toggle('responsive');
         }
     </script>
 </body>
