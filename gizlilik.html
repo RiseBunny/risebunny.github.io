@@ -11,50 +11,74 @@
     <meta property="og:type" content="website">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #f9f9f9;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
             line-height: 1.6;
         }
-        h1, h2 {
-            color: #3498db;
+
+        header {
+            background-color: #3498db;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 20px;
         }
+
+        h1, h2 {
+            color: #ecf0f1;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #34495e;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
         p {
             margin-bottom: 10px;
         }
+
         em {
             display: block;
             text-align: center;
-            color: #777;
+            color: #bdc3c7;
             font-size: 14px;
+            margin-top: 20px;
         }
+
         .menu-icon {
             display: none;
             cursor: pointer;
             float: right;
+            color: #ecf0f1;
+            font-size: 24px;
         }
+
         .menu {
             display: none;
             float: right;
             margin-top: 15px;
         }
+
         .menu a {
             display: block;
             text-align: center;
             text-decoration: none;
-            color: #3498db;
+            color: #ecf0f1;
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 10px;
+            transition: color 0.3s;
         }
+
         .menu a:hover {
-            color: #555;
+            color: #3498db;
         }
+
         @media only screen and (max-width: 600px) {
             .menu-icon {
                 display: block;
@@ -66,7 +90,9 @@
     </style>
 </head>
 <body>
-    <h1>RiseBunny Discord Bot - Gizlilik ve Kullanıcı Sözleşmesi</h1>
+    <header>
+        <h1>RiseBunny Discord Bot</h1>
+    </header>
 
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
 
@@ -76,21 +102,25 @@
         <a href="./hakkımda.html">Hakkımda</a>
     </div>
 
-    <h2>Gizlilik Politikası</h2>
-    <p>RiseBunny Ekibi olarak, kullanıcıların gizliliğini önemsiyoruz ve bu gizliliği korumak için çaba gösteriyoruz. Aşağıda, topladığımız bilgiler ve bu bilgilerin nasıl kullanıldığı hakkında detaylı bilgi bulunmaktadır:</p>
-    
-    <p><strong>Kullanıcı Verileri:</strong> RiseBunny, kullanıcıların sunucularda gerçekleştirdiği eylemleri ve bu eylemlerle ilgili verileri toplar. Ancak, bu veriler kullanıcı id si ve ismi gibi basit bilgilerdir.</p>
+    <section>
+        <h2>Gizlilik Politikası</h2>
+        <p>RiseBunny Ekibi olarak, kullanıcıların gizliliğini önemsiyoruz ve bu gizliliği korumak için çaba gösteriyoruz. Aşağıda, topladığımız bilgiler ve bu bilgilerin nasıl kullanıldığı hakkında detaylı bilgi bulunmaktadır:</p>
+        
+        <p><strong>Kullanıcı Verileri:</strong> RiseBunny, kullanıcıların sunucularda gerçekleştirdiği eylemleri ve bu eylemlerle ilgili verileri toplar. Ancak, bu veriler kullanıcı id si ve ismi gibi basit bilgilerdir.</p>
+    </section>
 
-    <h2>Kullanıcı Sözleşmesi</h2>
-    <p>RiseBunny'yi kullanarak, bu sözleşmeyi kabul etmiş oluyorsunuz ve bu sözleşmenin hükümlerine uymayı taahhüt ediyorsunuz. RiseBunny Discord Bot'unun kullanımı aşağıdaki koşullara tâbidir:</p>
-
-    <p><strong>1. Kötüye Kullanım:</strong> RiseBunny Discord Bot'unu kötü niyetli veya zarar verici şekilde kullanmak yasaktır. Botun istismarı, diğer kullanıcıların deneyimini olumsuz etkileyebilir ve bu durumda bot erişiminiz kısıtlanabilir.</p>
-
-    <p><strong>2. İzinsiz Erişim:</strong> RiseBunny'nin kodlarını birebir kopyalamak, kodlarına erişip yaymak, kötü niyetle komutları çoğaltmak kullanımınızı kısıtlamaya tâbi tutulur.</p>
-
-    <p><strong>3. Değişiklikler:</strong> RiseBunny, bu sözleşmeyi zaman zaman güncelleme hakkına sahiptir. Güncellemeleri takip etmek kullanıcının sorumluluğundadır ve güncellenen sözleşme hükümlerine uyulmalıdır.</p>
-
-    <p>Yukarıda belirtilen şartlara uyulmaması durumunda, Kullanıcının RiseBunny botuna erişimi kısıtlanabilir ve yasal işlem başlatılır!</p>
+    <section>
+        <h2>Kullanıcı Sözleşmesi</h2>
+        <p>RiseBunny'yi kullanarak, bu sözleşmeyi kabul etmiş oluyorsunuz ve bu sözleşmenin hükümlerine uymayı taahhüt ediyorsunuz. RiseBunny Discord Bot'unun kullanımı aşağıdaki koşullara tâbidir:</p>
+        
+        <p><strong>1. Kötüye Kullanım:</strong> RiseBunny Discord Bot'unu kötü niyetli veya zarar verici şekilde kullanmak yasaktır. Botun istismarı, diğer kullanıcıların deneyimini olumsuz etkileyebilir ve bu durumda bot erişiminiz kısıtlanabilir.</p>
+        
+        <p><strong>2. İzinsiz Erişim:</strong> RiseBunny'nin kodlarını birebir kopyalamak, kodlarına erişip yaymak, kötü niyetle komutları çoğaltmak kullanımınızı kısıtlamaya tâbi tutulur.</p>
+        
+        <p><strong>3. Değişiklikler:</strong> RiseBunny, bu sözleşmeyi zaman zaman güncelleme hakkına sahiptir. Güncellemeleri takip etmek kullanıcının sorumluluğundadır ve güncellenen sözleşme hükümlerine uyulmalıdır.</p>
+        
+        <p>Yukarıda belirtilen şartlara uyulmaması durumunda, Kullanıcının RiseBunny botuna erişimi kısıtlanabilir ve yasal işlem başlatılır!</p>
+    </section>
 
     <em>Son güncelleme tarihi: 4 Ekim 2023</em>
 
