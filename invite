@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnvite Sayfası</title>
+    <script>
+        // Ziyaretçiyi yönlendirmek istediğiniz link
+        var hedefLink = "https://discord.com/api/oauth2/authorize?client_id=1152613347708125194&permissions=8&scope=bot";
+
+        // Yönlendirme işlemi
+        function redirectToLink() {
+            window.location.href = hedefLink;
+        }
+    </script>
+</head>
+<body onload="redirectToLink()">
+   
+    <h1>Hoş geldiniz!</h1>
+    <p>Biraz Bekleyin.</p>
+</body>
+</html>
